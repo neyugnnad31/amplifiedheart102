@@ -1,0 +1,21 @@
+body {
+    background: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    background-color: rgb(128, 255, 0);
+}
+
+h1 {
+    color: red;
+}
+h2 {
+    color: rgb(255, 255, 255);
+}
+button {
+    background: gray;
+    border: none;
+    color: white;
+}

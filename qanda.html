@@ -4,34 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Dan-Zone</title>
+    <link rel="stylesheet" href="../styles/style.css">
     <style>
-        body {
-            background: black;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        h1 {
-            color: red;
-        }
-        h2 {
-            color: rgb(2, 87, 4);
-        }
-        button {
-            background: gray;
-            border: none;
-            color: white;
+        form {
+        display: inline-block;
+        /* Form outline */
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
         }
         
+        form li + li {
+        margin-top: 1em;
+        }
+
+        label {
+        /* Uniform size & alignment */
+        display: inline-block;
+        min-width: 90px;
+        text-align: right;
+        }
+
+        input,
+        textarea {
+        /* To make sure that all text fields have the same font settings
+            By default, textareas have a monospace font */
+        font: 1em sans-serif;
+        /* Uniform text field size */
+        width: 300px;
+        box-sizing: border-box;
+        /* Match form field borders */
+        border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+        /* Additional highlight for focused elements */
+        border-color: #000;
+        }
+
+        textarea {
+        /* Align multiline text fields with their labels */
+        vertical-align: top;
+        /* Provide space to type some text */
+        height: 5em;
+        }
+
+        .button {
+        /* Align buttons with the text fields */
+        padding-left: 90px; /* same size as the label elements */
+        }
+
+        button {
+        /* This extra margin represent roughly the same space as the space
+            between the labels and their text fields */
+        margin-left: 0.5em;
+        }
+
     </style>
 </head>
 <body>
-    <header style="background-color:chartreuse">
+    <header>
         <h1>The Dan-Zone</h1>
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About me</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="stream.html">Stream</a></li>
                 <li><a href="qanda.html">Q&A</a></li>
             </ul>
         </nav>
@@ -39,7 +78,22 @@
     </header>
 
     <main>
-        <h1>Q&A</h1>
+        <h2>Q&A</h2>
+        <form action="https://formspree.io/f/xoqgnyqd" method="post">
+			<ul style="list-style: none;">
+				<li>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="user_name" />
+				</li>
+				<li>
+					<label for="msg">Message:</label>
+					<textarea id="msg" name="user_message"></textarea>
+				</li>
+				<li class="button">
+					<button type="submit">Send your message</button>
+				</li>
+			</ul>
+		</form>
     </main>
     
     <footer>
@@ -47,7 +101,6 @@
         <button>
             Click here to be cool
         </button>
-        <br>
         <br>
         Dan Nguyen <br>
         <a href="mailto: neyugnnad31@gmail.com">neyugnnad31@gmail.com</a>
